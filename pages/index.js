@@ -1,4 +1,7 @@
+import React, { useState } from 'react'
+import Head from 'next/head'
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
 import db from '../db.json'
 import Widget from '../src/components/Widget'
 import QuizBackground from '../src/components/QuizBackground'
@@ -18,21 +21,43 @@ export const QuizContainer = styled.div`
 `;
 
 export default function Home() {
+  const router = useRouter()
+  const [name, setName] = useState('')
+
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>Quiz dos "Friends"</title>
+      </Head>
       <QuizContainer>
         <QuizLogo />
         <Widget>
           <Widget.Header>
             <h1>{db.title}</h1>
           </Widget.Header>
-          <Widget.Content>{db.description}</Widget.Content>
+          <Widget.Content>
+            {db.description}
+            <form onSubmit={function (e) {
+              e.preventDefault()
+              router.push(`/quiz?name=${name}`)
+            }}>
+              <input placeholder="Digite seu nome" onChange={function (e) {
+                setName(e.target.value)
+              }} />
+              <button
+                type="submit"
+                disabled={name.length === 0}
+              >
+                {name} clique em mim para
+              </button>
+            </form>
+          </Widget.Content>
         </Widget>
         <Widget>
           <Widget.Header>
             <h2>Quiz da Galera</h2>
           </Widget.Header>
-          <Widget.Content>aqui vai texto</Widget.Content>
+          <Widget.Content>Quizes dos outros</Widget.Content>
         </Widget>
         <Footer />
       </QuizContainer>
