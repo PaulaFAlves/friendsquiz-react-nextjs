@@ -82,9 +82,6 @@ function QuestionWidget({
     <Widget>
       <Widget.Header>
         <h3>
-          {/* <div className="text">
-            {`${name}, vamos lá!`}
-          </div> */}
           {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}
         </h3>
       </Widget.Header>
