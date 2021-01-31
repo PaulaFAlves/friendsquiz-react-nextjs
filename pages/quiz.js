@@ -156,7 +156,7 @@ export default function QuizPage() {
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const questionIndex = currentQuestion;
   const router = useRouter()
-  const questionsFiltered = db.questions.filter((question) => question.author.toLocaleLowerCase() !== router.query.name.toLocaleLowerCase())
+  const questionsFiltered = db.questions.filter((question) => question.author.toLowerCase() !== router.query.name.toLowerCase())
   const question = questionsFiltered[questionIndex];
   const totalQuestions = questionsFiltered.length;
 
