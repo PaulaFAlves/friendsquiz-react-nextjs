@@ -82,9 +82,6 @@ function QuestionWidget({
     <Widget>
       <Widget.Header>
         <h3>
-          {/* <div className="text">
-            {`${name}, vamos lá!`}
-          </div> */}
           {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}
         </h3>
       </Widget.Header>
@@ -156,7 +153,8 @@ export default function QuizPage() {
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const questionIndex = currentQuestion;
   const router = useRouter()
-  const questionsFiltered = db.questions.filter((question) => question.author.toLowerCase() !== router ? router.query.name.toLowerCase() : '')
+  const userName = router.query.name ? router.query.name.toLowerCase() : ''
+  const questionsFiltered = db.questions.filter((question) => question.author.toLowerCase() !== userName)
   const question = questionsFiltered[questionIndex];
   const totalQuestions = questionsFiltered.length;
 
