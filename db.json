@@ -1,12 +1,12 @@
 {
   "bg": "/friends.jpg",
-  "title": "Amigo sabe tudo?",
+  "title": "Amigo sabe tudo mesmo?",
   "description": "Teste seus conhecimentos sobre aqueles que você acha que conhece...",
   "questions": [
     {
       "id": 1,
+      "author": "henrique",
       "title": "Quem é a pessoa mais bonita do mundo no padrão de beleza do Mad?",
-      "description": "Essa é pra aquecer",
       "answer": 2,
       "alternatives": [
         "Cameron Diaz",
@@ -17,8 +17,8 @@
     },
     {
       "id": 2,
+      "author": "henrique",
       "title": "Se pudesse escolher outra profissão, o que o Mad seria?",
-      "description": "Faz tempo em haha",
       "answer": 0,
       "alternatives": [
          "Piloto de caça",
@@ -29,14 +29,362 @@
     },
     {
       "id": 3,
+      "author": "henrique",
       "title": "Onde o Mad gostaria de viver e passar o resto da vida?",
-      "description": "Faz tempo em haha",
       "answer": 2,
       "alternatives": [
          "Uruguai",
          "Nova Zelândia",
          "Canadá",
          "México"
+      ]
+    },
+    {
+      "id": 4,
+      "author": "henrique",
+      "title": "Qual comida favorita do Mad?",
+      "answer": 1,
+      "alternatives": [
+         "Pizza",
+         "Xis",
+         "Churrasco",
+         "Massinha"
+      ]
+    },
+    {
+      "id": 5,
+      "author": "henrique",
+      "title": "Quantos amigos, brother mesmo, o Mad tem?",
+      "answer": 3,
+      "alternatives": [
+         "12",
+         "11",
+         "8",
+         "10"
+      ]
+    },
+    {
+      "id": 6,
+      "author": "henrique",
+      "title": "Qual a música preferida do Mad?",
+      "answer": 2,
+      "alternatives": [
+         "Blitzkrieg Bop - Ramones",
+         "Clube dos Canalhas - Matanza",
+         "Ace of Spades - Motorhead",
+         "Last Caress - Misfits"
+      ]
+    },
+    {
+      "id": 7,
+      "author": "henrique",
+      "title": "O que o Mad mais admira numa pessoa?",
+      "answer": 2,
+      "alternatives": [
+         "Bumbum",
+         "Honestidade",
+         "Bondade",
+         "Carisma"
+      ]
+    },
+    {
+      "id": 8,
+      "author": "henrique",
+      "title": "Qual o filme favorito do Mad?",
+      "answer": 0,
+      "alternatives": [
+         "Django Livre",
+         "Pulp Fiction",
+         "O Poderoso chefão",
+         "Coringa"
+      ]
+    },
+    {
+      "id": 9,
+      "author": "carol",
+      "title": "Qual o filme favorito da Carol?",
+      "answer": 3,
+      "alternatives": [
+         "Tropa de Elite",
+         "Saneamento básico",
+         "As Branquelas",
+         "MIB III"
+      ]
+    },
+    {
+      "id": 10,
+      "author": "carol",
+      "title": "O que a Carol mais admira numa pessoa?",
+      "answer": 2,
+      "alternatives": [
+         "Sinceridade",
+         "Bom humor",
+         "Humildade",
+         "Comprometimento"
+      ]
+    },
+    {
+      "id": 11,
+      "author": "carol",
+      "title": "Qual música a Carol mais gosta?",
+      "answer": 0,
+      "alternatives": [
+         "Flutua - Liniker e Johnny Hooker",
+         "Caetano Veloso - Johnny Hooker",
+         "Chantaje - Shakira",
+         "Quando você passa (turu turu) - Sandy e Junior"
+      ]
+    },
+    {
+      "id": 11,
+      "author": "carol",
+      "title": "Com qual personalidade a Carol gostaria de tomar uma cerva na CB?",
+      "answer": 3,
+      "alternatives": [
+         "Anitta",
+         "Chico Buarque",
+         "Sandy",
+         "João Vicente"
+      ]
+    },
+    {
+      "id": 11,
+      "author": "carol",
+      "title": "Onde a Carol gostaria de viver e passar o resto da vida?",
+      "answer": 1,
+      "alternatives": [
+         "Cidade do México",
+         "Montevideo",
+         "São Paulo",
+         "Florianópolis"
+      ]
+    },
+    {
+      "id": 12,
+      "author": "carol",
+      "title": "Se pudesse escolher outra profissão, o que a Carol seria?",
+      "answer": 0,
+      "alternatives": [
+         "Administradora",
+         "Médica",
+         "Advogada",
+         "Arquiteta"
+      ]
+    },
+    {
+      "id": 13,
+      "author": "carol",
+      "title": "Se pudesse viajar agora, para onde a Carol iria?",
+      "answer": 1,
+      "alternatives": [
+         "São Paulo",
+         "Ushuaia",
+         "Cidade do México",
+         "Montevideo"
+      ]
+    },
+    {
+      "id": 14,
+      "author": "carol",
+      "title": "Quem é a pessoa mais bonita do mundo para a Carol, no padrão de beleza dela?",
+      "answer": 0,
+      "alternatives": [
+         "Kate Walsh",
+         "Jennifer Aniston",
+         "Natalie Portman",
+         "Scarlett Johansson"
+      ]
+    },
+    {
+      "id": 15,
+      "author": "leandro",
+      "title": "Qual o filme favorito do Leandro?",
+      "answer": 1,
+      "alternatives": [
+         "O mentiroso",
+         "Seven",
+         "Jogos Mortais I",
+         "Clube da Luta"
+      ]
+    },
+    {
+      "id": 16,
+      "author": "leandro",
+      "title": "O que o Leandro mais admira numa pessoa?",
+      "answer": 1,
+      "alternatives": [
+         "Não ser enjoada para comer",
+         "Não ser chata",
+         "Não ser preguiçosa",
+         "Não discordar dele"
+      ]
+    },
+    {
+      "id": 17,
+      "author": "leandro",
+      "title": "Qual a música preferida do Leandro?",
+      "answer": 3,
+      "alternatives": [
+         "Fear of the Dark - Iron Maden",
+         "Evidências - Chitãozinho e Xororó",
+         "Cachorro Louco - TNT",
+         "Sob um céu de blues - Cascavelletes"
+      ]
+    },
+    {
+      "id": 18,
+      "author": "leandro",
+      "title": "Com qual personalidade o Leandro gostaria de tomar uma cerva na CB?",
+      "answer": 2,
+      "alternatives": [
+         "Murilo Couto",
+         "Michael Jordan",
+         "Anitta",
+         "Lewis Hamilton"
+      ]
+    },
+    {
+      "id": 19,
+      "author": "leandro",
+      "title": "Se pudesse escolher outra profissão, o que o Leandro seria?",
+      "answer": 1,
+      "alternatives": [
+         "Piloto de fórmula I",
+         "Astronauta",
+         "Ator",
+         "Jogador de volei"
+      ]
+    },
+    {
+      "id": 20,
+      "author": "leandro",
+      "title": "Se pudesse viajar agora, para onde o Leandro iria?",
+      "answer": 0,
+      "alternatives": [
+         "Maldivas",
+         "Wanaka",
+         "Cancun",
+         "Ushuaia"
+      ]
+    },
+    {
+      "id": 21,
+      "author": "leandro",
+      "title": "Quem é a pessoa mais bonita do mundo para o Leandro, no padrão de beleza dele?",
+      "answer": 2,
+      "alternatives": [
+         "Natalie Portman",
+         "Paola OLiveira",
+         "Paula Alves",
+         "Michelle Monaghan"
+      ]
+    },
+    {
+      "id": 22,
+      "author": "leandro",
+      "title": "Qual a comida preferida do Leandro?",
+      "answer": 1,
+      "alternatives": [
+         "Miojo com ovo",
+         "Pizza",
+         "Churrasco",
+         "Xisão"
+      ]
+    },
+    {
+      "id": 23,
+      "author": "paula",
+      "title": "Com qual personalidade a Carol gostaria de tomar uma cerva na CB?",
+      "answer": 3,
+      "alternatives": [
+         "Helio Flanders",
+         "Emicida",
+         "Mano Brown",
+         "Jout jout"
+      ]
+    },
+    {
+      "id": 24,
+      "author": "paula",
+      "title": "Qual o filme favorito da Paula?",
+      "answer": 1,
+      "alternatives": [
+         "Jojo Rabbit",
+         "Sex and the city",
+         "O paizão",
+         "Saneamento básico"
+      ]
+    },
+    {
+      "id": 25,
+      "author": "paula",
+      "title": "Onde a Paula gostaria de viver e passar o resto da vida?",
+      "answer": 3,
+      "alternatives": [
+         "São Paulo",
+         "Wanaka",
+         "Cidade do México",
+         "No meio do mato"
+      ]
+    },
+    {
+      "id": 26,
+      "author": "paula",
+      "title": "O que mais a Paula admira numa pessoa?",
+      "answer": 1,
+      "alternatives": [
+         "Humildade",
+         "Empatia",
+         "Cumplicidade",
+         "Bom humor"
+      ]
+    },
+    {
+      "id": 27,
+      "author": "paula",
+      "title": "Qual o comida preferida da Paula?",
+      "answer": 3,
+      "alternatives": [
+         "Pizza vegetariana",
+         "Xis vegetariano",
+         "Churrasco vegetariano",
+         "Arroz e feijão"
+      ]
+    },
+    {
+      "id": 28,
+      "author": "paula",
+      "title": "Quem é a pessoa mais bonita do mundo para a Paula, no padrão de beleza dela?",
+      "answer": 1,
+      "alternatives": [
+         "Helio Flanders",
+         "Penelope Cruz",
+         "João Vicente",
+         "Rodrigo Hilbert"
+      ]
+    },
+    {
+      "id": 29,
+      "author": "paula",
+      "title": "Se pudesse escolher outra profissão, o que a Paula seria?",
+      "answer": 3,
+      "alternatives": [
+         "Cozinheira",
+         "Astronauta",
+         "Atriz",
+         "Cantora"
+      ]
+    },
+    {
+      "id": 30,
+      "author": "paula",
+      "title": "Se pudesse viajar agora, para onde a Paula iria?",
+      "answer": 2,
+      "alternatives": [
+         "São Paulo",
+         "Cabo Polônio",
+         "Peru",
+         "Ushuaia"
       ]
     }
   ],

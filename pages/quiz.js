@@ -7,35 +7,49 @@ import Button from '../src/components/Button'
 import AlternativeForm from '../src/components/AlternativeForm'
 import { useRouter } from 'next/router'
 
-function ResultWidget({ results }) {
+function ResultWidget({ results, totalQuestions, name }) {
+  const res = () => {
+    return results.reduce((sum, result) => {
+      const isAcerto = result.isCorrect === true
+      if (isAcerto) {
+        return sum + 1
+      }
+      return sum
+    }, 0)
+  }
+
+  const back = () => {
+    window.location.href="/"
+  }
+
   return (
     <Widget>
       <Widget.Header>
-        Tela de resultado
+        A hora da verdade!
       </Widget.Header>
 
       <Widget.Content>
         <p>
-          Você acertou
-          {' '}
-          {results.reduce((sum, result) => {
-            const isAcerto = result.isCorrect === true
-            if (isAcerto) {
-              return sum + 1
-            }
-            return sum
-          }, 0)}
-          {' '}
-        perguntas
+          {`${name[0].toUpperCase() + name.substr(1)}, você acertou ${res()} de ${totalQuestions} perguntas!`}
         </p>
-        <ul>
-          {results.map((result) => (
-            <li key={result.id}>
-              <p>{`${result.id}. ${result.question}`}</p>
-              <p>{result.isCorrect === true ? 'Acertou' : 'Errou'}</p>
-            </li>
-          ))}
-        </ul>
+        {
+          (res() > 22) ? 
+          <div>
+            <h1>Baita amigx!</h1>
+            <img src="https://media.giphy.com/media/1jkV5ifEE5EENHESRa/giphy.gif" style={{ width: "100%", marginBottom: "15px" }}/>
+          </div> 
+          : 
+          <div>
+            <h1>Que bosta de amigx tu é!</h1>
+            <img src="https://media.giphy.com/media/bQloCmn3sCDeDbTsl1/giphy.gif" style={{ width: "100%", marginBottom: "15px"  }}/>
+          </div>
+        }
+        <Button
+          type="button"
+          onClick={back}
+        >
+          Jogar de novo
+        </Button>
       </Widget.Content>
     </Widget>
   );
@@ -68,9 +82,9 @@ function QuestionWidget({
     <Widget>
       <Widget.Header>
         <h3>
-          <div className="text">
+          {/* <div className="text">
             {`${name}, vamos lá!`}
-          </div>
+          </div> */}
           {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}
         </h3>
       </Widget.Header>
@@ -79,10 +93,6 @@ function QuestionWidget({
         <h2>
           {question.title}
         </h2>
-        <p>
-          {question.description}
-        </p>
-
         <AlternativeForm
           onSubmit={(e) => {
             e.preventDefault();
@@ -126,8 +136,8 @@ function QuestionWidget({
           <Button type="submit" disabled={!hasAlternativeSelected}>
             Confirmar
           </Button>
-          {isQuestionSubmitted && isCorrect && <p>Você acertou!</p>}
-          {isQuestionSubmitted && !isCorrect && <p>Você errou!</p>}
+          {isQuestionSubmitted && isCorrect && <p>Você acertou, espertinhx!</p>}
+          {isQuestionSubmitted && !isCorrect && <p>{`Você errou, mula! Era ${question.alternatives[question.answer]}!`}</p>}
         </AlternativeForm>
       </Widget.Content>
     </Widget>
@@ -143,11 +153,12 @@ const screenStates = {
 export default function QuizPage() {
   const [screenState, setScreenState] = useState(screenStates.LOADING);
   const [results, setResults] = useState([])
-  const totalQuestions = db.questions.length;
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const questionIndex = currentQuestion;
-  const question = db.questions[questionIndex];
   const router = useRouter()
+  const questionsFiltered = db.questions.filter((question) => question.author.toLocaleLowerCase() !== router.query.name.toLocaleLowerCase())
+  const question = questionsFiltered[questionIndex];
+  const totalQuestions = questionsFiltered.length;
 
   function addResult(result) {
     setResults([
@@ -155,7 +166,7 @@ export default function QuizPage() {
       result
     ])
   }
-
+ 
   useEffect(() => {
     setTimeout(() => { setScreenState(screenStates.QUIZ) }, 1000)
   }, []);
@@ -185,7 +196,7 @@ export default function QuizPage() {
 
         {screenState === screenStates.LOADING && <LoadingWidget />}
 
-        {screenState === screenStates.RESULT && <ResultWidget results={results} />}
+        {screenState === screenStates.RESULT && <ResultWidget results={results} totalQuestions={totalQuestions} name={router.query.name} />}
       </QuizContainer>
     </QuizBackground>
   )

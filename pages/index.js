@@ -24,6 +24,13 @@ export const QuizContainer = styled.div`
 export default function Home() {
   const router = useRouter()
   const [name, setName] = useState('')
+  const names = ['paula', 'leandro', 'carol', 'henrique']
+
+  const checkName = (e) => {
+    if (names.includes(e.toLocaleLowerCase())) {
+      setName(e)
+    } 
+  }
 
   return (
     <QuizBackground backgroundImage={db.bg}>
@@ -49,12 +56,13 @@ export default function Home() {
               <Input
                 name="nomeDoUsuario"
                 placeholder="Digite seu nome"
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => checkName(e.target.value)}
                 value={name}
               />
               <Button
                 type="submit"
                 disabled={name.length === 0}
+                title="texto"
               >
                 clique aqui para jogar
               </Button>
